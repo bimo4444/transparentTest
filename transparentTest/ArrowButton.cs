@@ -39,33 +39,28 @@ namespace transparentTest
         protected override Pen pen { get; set; } = new Pen(Brushes.Black, (float)1.9);
         #endregion
 
-        #region ctors
-        public ArrowButton(Directions direction, Size size, Pen pen) : base(direction, size)
-        {
-            this.pen = pen;
-        }
-        public ArrowButton(Directions direction, Size size) : base(direction, size) { }
+                #region ctors
         public ArrowButton() : base(Directions.Right, new Size(13, 22)) { }
-        public ArrowButton(Directions direction)
-            : base(
-                  direction,
+        public ArrowButton(Directions direction, Brush brush = null, Pen pen = null)
+            : base(direction,
                   direction == Directions.Right
                   || direction == Directions.Left
                   ? new Size(13, 22)
                   : new Size(22, 13))
         {
+            if (pen != null) this.pen = pen;
+            if (brush != null)
+                EnabledBrush = brush;
+        }
+        public ArrowButton(Directions direction, Size size, Brush brush = null, Pen pen = null) : base(direction, size)
+        {
+            if (pen != null) this.pen = pen;
+            if (brush != null)
+                EnabledBrush = brush;
         }
         public ArrowButton(Directions direction, bool alternativeColor) : this(direction)
         {
             EnabledBrush = Brushes.MediumTurquoise;
-        }
-        public ArrowButton(Directions direction, Brush brush) : this(direction)
-        {
-            EnabledBrush = brush;
-        }
-        public ArrowButton(Directions direction, Size size, Brush brush) : base(direction, size)
-        {
-            EnabledBrush = brush;
         }
         #endregion
 
