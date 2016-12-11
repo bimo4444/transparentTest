@@ -9,9 +9,6 @@ using System.Windows.Forms;
 
 namespace transparentTest
 {
-
-
-
     /// <summary>
     /// hint: the greater side should be even for the best smoothing
     /// </summary>
