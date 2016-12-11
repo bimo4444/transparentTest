@@ -26,10 +26,9 @@ namespace transparentTest
         #endregion
 
         #region ctor
-        public BaseArrowButton(Directions direction, Size size)//, Pen pen)
+        public BaseArrowButton(Directions direction, Size size)
         {
             this.direction = direction;
-            //this.pen = pen;
             this.Size = size;
         }
         #endregion
